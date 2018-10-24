@@ -1,0 +1,122 @@
+KFS TRAINING CONTENT - OCTOBER 2018
+=======================
+
+- What to expect here
+  - You will NOT know everything
+  - Better holistic understanding
+  - Better knowledge base about how to find what you need
+  - It's gargantuan, built by multiple teams, spanning 15 years
+- Overview & Structure
+  - 2 systems (kfs & rice)
+    - Plus some rice libs included in kfs
+      - (open PersistableBusinessObjectBase) and show libs
+    - Mostly you can ignore the fact that Rice is remote, except:
+      - (show both URLs)
+      - Different URL to address rice screens directly
+      - Be aware when your rice pages are IFrame'd in the portal
+      - Doc Search, Action List, Perms, Roles, DocTypes
+  - 4 code projects (ucd-kfs, kfs-baseline, ucd-rice, rice-baseline)
+    - Don't put kfs-baseline and rice-baseline in Eclipse
+    - grep -R for non-java searches
+  - The overlay
+    - Why is there org.kuali code in ucd-kfs?
+  - The Database(s)
+    - 3 schemas (plus others)
+    - Naming conventions
+    - Snapshots FTW
+    - DB schema differences between Local and Deployed environments
+- Finding Things in KFS, part 1
+  - So many conventions!  learn them use them
+  - Expectation Setting:  If you don't already know this, you won't have it all memorized after this training
+  - The front-end
+    - Portal files
+    - JSP vs Tag files
+    - javascript & css
+  - The Code
+    - Struts action & form classes
+    - Business object
+    - Documents
+    - Maintainables
+    - Lookup helpers
+    - Services
+      - SpringContext
+      - ServiceLocators
+      - When to use SpringContext.getBean vs ServiceLocators
+        - Local services use SpringContext, Rice services use Locators
+    - Batch Steps
+    - Integration points
+    - GlobalVariables
+      - ThreadLocal
+      - Only in batch jobs and API endpoints do you muck with the UserSession
+      - You only will run into this with Validations and batch jobs, mostly
+  - The XML
+    - OJB
+      - baseline: ojb-<module>.xml
+      - UCD overrides: ojb-<module>-override.xml
+      - UCD New: ojb-<module>-uc.xml
+    - Spring
+      - baseline: spring-<module>.xml (also the module declaration)
+      - UCD overrides: spring-<module>-uc.xml
+      - UCD TP specific: spring-<module>-uc-tp-only.xml
+      - UCD Batch specific: spring-<module>-uc-batch.xml
+    - DataDictionary
+      - Documents
+        - baseline: InternalBillingDocument.xml (from kfs-baseline)
+        - UCD overrrides:  InternalBillingDocument.xml (from ucd-kfs)
+      - BusinessObjects
+        - baseline: Account.xml (from kfs-baseline)
+        - UCD overrides Account.xml (from ucd-kfs)
+      - MaintenanceDocuments
+        - baseline:  AccountMaintenanceDocument.xml (kfs-baseline)
+        - UCD override:  AccountMaintenanceDocument.xml (ucd-kfs)
+      - Validations
+        - Documents
+          - baseline:  InternalBillingValidation.xml (from kfs-baseline)
+          - UCD overrides:  InternalBillingValidation.xml (from ucd-kfs)
+        - MaintenanceDocuments
+          - UcKualiAccountRule.java
+- Finding Things in KFS, part 2
+  - How to find the code from a URL
+  - How to find what user I need to backdoor as?
+    - Ie, permissions, roles, groups
+  - How to find the stacktrace in the logs?
+  - How to find the feed files for batch job issues
+- Asynchronous Actions & Transaction Boundaries
+  - So important it gets its own section
+  - Document routing and most actions are synch
+    - Immediately return, even before routing is done
+  - What this means for Transaction Boundaries
+  - Batch Jobs
+    - Wrapped Step (giant wrapping transaction)
+    - (show examples)
+- Struts
+  - Intro to Struts
+    - Struts isn't scary, it's just old
+    - It's a typical early-gen server-side MVC
+  - Struts classes are NOT Spring Managed!
+  - Actions / methodToCall
+  - Forms / document + other fields
+    - Buttons / getExtraButtons
+  - Important hooks
+    - populate()
+    - refresh()
+  - Document Actions
+    - Route, Save, Cancel, Approve, etc
+- Validations
+  - Transactional document validations
+    - Accounting Line validations
+    - Validation events
+  - Maintenance document validations
+- Real World Examples
+  - Enhancements
+    - Mask a field on a BO
+    - Add a new validation on a document
+  - Bugs
+  - Document exceptions
+  - Routing Exceptions
+  - Batch Job Failures
+- Unit Tests
+  - Mocks
+  - PowerMocks
+  - If you're not sure how something works, write a unit test!
+  -
