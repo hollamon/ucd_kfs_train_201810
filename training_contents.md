@@ -103,6 +103,14 @@ KFS TRAINING CONTENT - OCTOBER 2018
     - Alternative to the raw logs is kibana
       - `https://afs-elk.ucdavis.edu/app/kibana`
   - How to find the feed files for batch job issues
+- DBAccess/OJB
+  - OJB is a fairly simple ORM
+  - References
+  - Collections
+  - Proxies
+  - conversions
+  - auto-retrieve, auto-update, auto-delete
+  - Consider using raw SQL via Jdbc when needed!
 - Struts
   - Intro to Struts
     - Struts isn't scary, it's just old
