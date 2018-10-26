@@ -117,6 +117,7 @@ KFS TRAINING CONTENT - OCTOBER 2018
     - It's a typical early-gen server-side MVC
   - Struts classes are NOT Spring Managed!
     - You have to use SpringContext.getBean() and ServiceLocators
+  - struts-config xml
   - Actions / methodToCall
   - Forms / document + other fields
     - Buttons / getExtraButtons
@@ -198,7 +199,7 @@ KFS TRAINING CONTENT - OCTOBER 2018
   - BigDecimal.signum
   - BigDecimal.compareTo
   - Lazy getters for consuming service from Struts or non-spring-objects
-  -
+  - Why you should never use a floating-point datatype for money
 - Real World Examples
   - Jiras
     - KFS-20251: Removing VOID button for a certain type of PO
