@@ -138,6 +138,11 @@ KFS TRAINING CONTENT - OCTOBER 2018
       - Document permissions based on the document state
       - UcPurchaseOrderDocumentPresentationController
       - Look at both DocumentPresentationController interfaces
+- DataDictionary
+  - BusinessObjects
+  - Documents
+  - DocumentValidations
+  - Maintenance Documents
 - KIM Roles, Groups, Permissions
   - Difference between Roles and Groups
   - Qualified Roles
@@ -152,6 +157,9 @@ KFS TRAINING CONTENT - OCTOBER 2018
   - Responsibilities
     - Responsibilities are a link between route-nodes and KIM roles
   - Putting it all together
+    - ucd-kfs good reference
+      - ProcurementCardDocument.xml
+        - shows local defined stuff
     - Workflow XML for InternalBilling document
     - `<role name="Account" nextNode="AccountingOrganizationHierarchy" />`
     - Find the Responsibility for this
