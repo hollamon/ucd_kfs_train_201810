@@ -244,4 +244,8 @@ KFS TRAINING CONTENT - OCTOBER 2018
   - PowerMocks
     - (KFS-20186)
   - If you're not sure how something works, write a unit test!
-  -
+- Class Exercises
+  - Mask a field on Account ... use an existing permission
+  - New validation on IB that requires a specific account to be used
+  - Populate sub-account from account on IB on Save
+  - New routing node on IB
