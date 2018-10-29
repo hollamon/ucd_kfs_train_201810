@@ -7,6 +7,10 @@ KFS TRAINING CONTENT - OCTOBER 2018
   - Better knowledge base about how to find what you need
   - It's gargantuan, built by multiple teams, spanning 15 years
 - Overview & Structure
+  - Three things are hard in KFS
+    - The business domain
+    - How to find the code where the bug is
+    - How to repro the bug in local environment
   - 2 systems (kfs & rice)
     - Plus some rice libs included in kfs
       - (open PersistableBusinessObjectBase) and show libs
@@ -127,6 +131,10 @@ KFS TRAINING CONTENT - OCTOBER 2018
   - Important hooks
     - populate()
     - refresh()
+    - execute()
+      - Runs before the methodToCall method
+    - loadDocument()
+    -
   - Document Actions
     - Route, Save, Cancel, Approve, etc
   - Permissions (DocumentActions & EditModes)
@@ -138,16 +146,16 @@ KFS TRAINING CONTENT - OCTOBER 2018
       - Document permissions based on the document state
       - UcPurchaseOrderDocumentPresentationController
       - Look at both DocumentPresentationController interfaces
-- DataDictionary
-  - BusinessObjects
-  - Documents
-  - DocumentValidations
-  - Maintenance Documents
 - KIM Roles, Groups, Permissions
   - Difference between Roles and Groups
   - Qualified Roles
   - Qualified Permission
   - Show how document attributes and role qualifiers permission qualifiers
+- DataDictionary
+  - BusinessObjects
+  - Documents
+  - DocumentValidations
+  - Maintenance Documents
 - Document Workflow
   - WARNING: This will not be intuitive probably, this may look crazy and overcomplex
     - You will probably not understand this until you've worked through an example or two
